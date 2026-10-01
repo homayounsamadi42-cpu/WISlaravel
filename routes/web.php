@@ -1,37 +1,39 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PagesController;
-
-Route::resource("/pages",PagesController::class);
-
-
+// use App\Http\Controllers\PagesController;
+// Route::resource("/pages",PagesController::class);
 // use App\Http\Controllers\PostsController;
-
 // use App\Http\Controllers\Posts\PagesController;
-
-// Route::get("/contact-page",[PagesController::class,"myContact"]);
-
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('home',[
+        'course'=>'web inforamtion systems'
+   ]);
    
 });
 
-
-Route::get("/contact",function(){
-return view("contact");
+Route::get("/about",function(){
+    return view("about");
 });
 
 
-// Route::get("/user/{id?}",function($id="none"){
-//     return "user Id:".$id;
+
+
+
+
+// Route::get("/contact",function(){
+// return view("contact");
 // });
 
 
-Route::post("/create_new_post",function(){
-    return "post created successfully!";
-})->name('post.create');
+// // Route::get("/user/{id?}",function($id="none"){
+// //     return "user Id:".$id;
+// // });
+
+
+// Route::post("/create_new_post",function(){
+//     return "post created successfully!";
+// })->name('post.create');
 
 // Route::any("/create-product",function(){
 //     return "product created successfully!";
